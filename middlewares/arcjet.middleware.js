@@ -7,7 +7,6 @@ const arjectMiddleware = async (req, res, next) => {
             key: req.ip || 'anonymous'
         });
 
-        console.log('Arcjet decision:', decision);
 
         if (decision.isDenied()) {
             if (decision.reason.isRateLimit()) {
